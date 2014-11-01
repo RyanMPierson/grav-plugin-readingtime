@@ -1,0 +1,12 @@
+name: Reading Time
+version: 1.0.0
+description: "Add reading time to your pages."
+icon: comments-o
+author:
+  name: NunoPress LLC
+  email: hello@nunopress.com
+  url: http://nunopress.com
+homepage: https://github.com/nunopress/grav-plugin-readingtime
+keywords: readingtime, plugin
+bugs: https://github.com/nunopress/grav-plugin-readingtime/issues
+license: MIT
