@@ -1,6 +1,6 @@
 # Grav ReadingTime Plugin
 
-**ReadingTime** is a [Grav](http://github.com/getgrav/grav) plugin which allows Grav to display the reading time.
+**ReadingTime** is a [Grav](http://github.com/getgrav/grav) plugin which allows Grav to display the reading time of a page's content. This is especially useful for blogs and other sites as it gives the reader a quick idea of how much time they will need to set aside to read the page in full.
 
 Enabling the plugin is very simple. Just install the plugin folder to `/user/plugins/` in your Grav install. By default, the plugin is enabled.
 
@@ -18,7 +18,7 @@ The contents of the zipped folder should now be located in the `/your/site/grav/
 
 ### Initial Setup
 
-Place the following line of code in the theme file you wish to add readingtime plugin for:
+Place the following line of code in the theme file you wish to add the ReadingTime plugin for:
 
 ```
 {{ page.content|readingtime }}
@@ -38,22 +38,30 @@ If you need you can change the format with this avariable variables (the code is
 {{ page.content|readingtime({'format': '{minutes_short_count} {minutes_text}, {seconds_short_count} {seconds_text}'}) }}
 ```
 
-Avariable variables:
-`{minute_label}`: minute label (ex. minute)
-`{minutes_label}`: minutes label (ex. minutes)
-`{second_label}`: second label (ex. second)
-`{seconds_label}`: seconds label (ex. seconds)
-`{format}`: display the format of reading time plugin (ex. {minutes_text} {minutes_short_count}, {seconds_text} {seconds_short_count})
+Available variables:
 
-Not avariable to edit but used in format variable:
+|      Variable     |       Description       |                                   Example                                    |
+| :---------------- | :---------------------- | :--------------------------------------------------------------------------- |
+| `{minute_label}`  | Minute Label (Singular) | `minute`                                                                     |
+| `{minutes_label}` | Minutes Label (Plural)  | `minutes`                                                                    |
+| `{second_label}`  | Second Label (Singular) | `second`                                                                     |
+| `{seconds_label}` | Second Label (Plural)   | `seconds`                                                                    |
+| `{format}`        | Display Format          | `{minutes_text} {minutes_short_count}, {seconds_text} {seconds_short_count}` |
 
-`{minutes_short_count}`: display minutes (ex. 2)
-`{seconds_short_count}`: display seconds (ex. 9)
-`{minutes_long_count}`: display long version of minutes (ex. 02)
-`{seconds_long_count}`: display long version of seconds (ex. 09)
+Not available to edit but used in the format variable:
+
+|         Variable        |               Description                | Example |
+| :---------------------- | :--------------------------------------- | :------ |
+| `{minutes_short_count}` | Displays Minutes with Abbreviated Digits | `2`     |
+| `{seconds_short_count}` | Displays Seconds with Abbreviated Digits | `9`     |
+| `{minutes_long_count}`  | Displays Minutes in Double Digits        | `02`    |
+| `{seconds_long_count}`  | Displays Seconds in Double Digits        | `09`    |
 
 Display variables for text labels:
-`{minutes_text}`: display the minutes text label based on number of minutes for write single or plural version.
-`{seconds_text}`: display the seconds text label based on number of seconds for write single or plural version.
 
->> NOTE: Any time you are making alterations to a theme's files, you will likely want to duplicate the theme folder in the `user/themes/` directory, rename it, and set the new name as your active theme. This will ensure that you don't lose your customizations in the event that a theme is updated.
+|     Variable     |                                   Description                                    |  Example  |
+| :--------------- | :------------------------------------------------------------------------------- | :-------- |
+| `{minutes_text}` | Displays the Minutes Text Label (Singular or Plural, Based on Number of Minutes) | `minute`  |
+| `{seconds_text}` | Displays the Seconds Text Label (Singular or Plural, Based on Number of Seconds) | `seconds` |
+
+>> NOTE: Any time you are making alterations to a theme's files, you will want to duplicate the theme folder in the `user/themes/` directory, rename it, and set the new name as your active theme. This will ensure that you don't lose your customizations in the event that a theme is updated. Once you have tested the change thoroughly, you can delete or back up that folder elsewhere.
